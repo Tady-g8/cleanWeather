@@ -5,6 +5,8 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-color: #1a1a1a;
     color: white;
+    
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .tripplet{
@@ -21,11 +23,27 @@ body{
 }
 
 .tempChart{
-    width: 100%;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
 }
 
 .humChart{
-    width: 100%;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.data-humidity{
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.data-temp{
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
 }
 
 h1 {
