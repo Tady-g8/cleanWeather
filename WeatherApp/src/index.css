@@ -11,9 +11,18 @@ body{
 
 .tripplet{
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     height: 250px;
+}
+
+.smallCharts{
+    padding-left: 2.3%;
+    padding-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px; /* Set the gap between grid cells */
 }
 
 .duet{
@@ -41,6 +50,12 @@ body{
 }
 
 .data-temp{
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.data-rain{
     width: 80%;
     height: 90%;
     margin: 0 auto;

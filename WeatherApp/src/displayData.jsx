@@ -35,7 +35,6 @@ export default function DisplayData({Data}) {
             <h1>Weather in {Data.name}</h1>
               <div className="tripplet">
                 <div className="data-desc">
-
                   <ul>
                     <li>Temperature: {Data.main.temp} °C</li>
                     <li>Feels like: {Data.main.feels_like} °C</li>
@@ -48,91 +47,134 @@ export default function DisplayData({Data}) {
                     <li>Pressure: {Data.main.pressure} hPa</li>
                     <li>Visibility: {Data.visibility} m</li>
                   </ul>
-
                 </div>
-                <div className="data-temp">
-                  <Bar 
-                    data={{
-                      labels: ["Temperature"],
-                      datasets: [
-                        {
-                          label: "Temperature",
-                          data: [Data.main.temp],
-                          backgroundColor: "#3f51b5",
-                          borderColor: "#2196f3",
-                          borderWidth: 1,
-                        }
-                      ],
-                    }}
-                    options={{
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          min: -45,
-                          max: 45,
-                          ticks: {
-                            color: "#999999", 
+                <div className="smallCharts">
+                  <div className="data-temp">
+                    <Bar 
+                      data={{
+                        labels: ["Temperature"],
+                        datasets: [
+                          {
+                            label: "Temperature",
+                            data: [Data.main.temp],
+                            backgroundColor: "#3f51b5",
+                            borderColor: "#2196f3",
+                            borderWidth: 1,
+                          }
+                        ],
+                      }}
+                      options={{
+                        scales: {
+                          y: {
+                            beginAtZero: true,
+                            min: -45,
+                            max: 45,
+                            ticks: {
+                              color: "#999999", 
+                            },
+                            grid: {
+                              color: "#999999", 
+                            },
                           },
-                          grid: {
-                            color: "#999999", 
-                          },
-                        },
-                        x: {
-                          ticks: {
-                            color: "#999999", 
-                          },
-                          grid: {
-                            color: "#999999", 
-                          },
-                        },
-                      },
-                      maintainAspectRatio: false,
-                      width: "80%",
-                      height: "100%",
-                    }}
-                  />
-                </div>
-                <div className="data-humidity">
-                  <Bar 
-                    data={{
-                      labels: ["Humidity"],
-                      datasets: [
-                        {
-                          label: "Humidity",
-                          data: [Data.main.humidity],
-                          backgroundColor: "#3f51b5",
-                          borderColor: "#2196f3",
-                          borderWidth: 1,
-                        }
-                      ],
-                    }}
-                    options={{
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          min: 0,
-                          max: 100,
-                          ticks: {
-                            color: "#999999", 
-                          },
-                          grid: {
-                            color: "#999999", 
+                          x: {
+                            ticks: {
+                              color: "#999999", 
+                            },
+                            grid: {
+                              color: "#999999", 
+                            },
                           },
                         },
-                        x: {
-                          ticks: {
-                            color: "#999999", 
+                        maintainAspectRatio: false,
+                        width: "80%",
+                        height: "100%",
+                      }}
+                    />
+                  </div>
+                  <div className="data-humidity">
+                    <Bar 
+                      data={{
+                        labels: ["Humidity"],
+                        datasets: [
+                          {
+                            label: "Humidity",
+                            data: [Data.main.humidity],
+                            backgroundColor: "#3f51b5",
+                            borderColor: "#2196f3",
+                            borderWidth: 1,
+                          }
+                        ],
+                      }}
+                      options={{
+                        scales: {
+                          y: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 100,
+                            ticks: {
+                              color: "#999999", 
+                            },
+                            grid: {
+                              color: "#999999", 
+                            },
                           },
-                          grid: {
-                            color: "#999999", 
+                          x: {
+                            ticks: {
+                              color: "#999999", 
+                            },
+                            grid: {
+                              color: "#999999", 
+                            },
                           },
                         },
-                      },
-                      maintainAspectRatio: false,
-                      width: "80%",
-                      height: "100%",
-                    }}
-                  />
+                        maintainAspectRatio: false,
+                        width: "80%",
+                        height: "100%",
+                      }}
+                    />
+                  </div>
+                  <div className="data-rain">
+                    <Bar 
+                      data={{
+                        Labels: ["Downpour"],
+                        datasets: [
+                          {
+                            label: "Downpour",
+                            data: [Data.rain ? Data.rain["1h"] : 0],
+                            backgroundColor: "#3f51b5",
+                            borderColor: "#2196f3",
+                            borderWidth: 1,
+                          }
+                        ],
+                      }}
+                      options={{
+                        scales: {
+                          y: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 100,
+                            ticks: {
+                              color: "#999999", 
+                            },
+                            grid: {
+                              color: "#999999", 
+                            },
+                          },
+                          x: {
+                            ticks: {
+                              color: "#999999", 
+                            },
+                            grid: {
+                              color: "#999999", 
+                            },
+                          },
+                        },
+                        maintainAspectRatio: false,
+                        width: "80%",
+                        height: "100%",
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="duet">
