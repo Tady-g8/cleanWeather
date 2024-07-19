@@ -36,3 +36,7 @@ li {
     list-style-type: none;
     padding: 2px 0px;
 }
+
+.average {
+    text-align: center;
+}

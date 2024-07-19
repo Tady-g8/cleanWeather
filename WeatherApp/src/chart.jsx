@@ -13,11 +13,15 @@ export default function LineChart() {
   const scaledMinTemp = Math.floor(minTemp - 5);
   const scaledMaxTemp = Math.floor(maxTemp + 5);
 
+  var averageTemp = dataHistory.reduce((sum, data) => sum + data.temperature, 0) / dataHistory.length;
+  var hours = Math.max(...dataHistory.map((data) => new Date(data.time).getHours())) - Math.min(...dataHistory.map((data) => new Date(data.time).getHours()));
+
+
   return (
     <div className="chart-container">
       <Line 
         data={{
-          labels: dataHistory.map((data) => new Date(data.time).toLocaleTimeString()),
+          labels: dataHistory.map((data) => new Date(data.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })),
           datasets: [
             {
               label: "Temperature",
@@ -52,6 +56,7 @@ export default function LineChart() {
             },
         }}
       />
+      <p className="average">Average Temperature in the past {hours} hours is {averageTemp.toFixed(2)}</p>
     </div>
   );
 }

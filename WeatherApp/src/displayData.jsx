@@ -10,25 +10,20 @@ export default function DisplayData({Data}) {
 
     useEffect(() => {
         if (Data) {
-          // Retrieve existing data from localStorage or initialize an empty array
           const storedData = localStorage.getItem("dataHistory");
           const dataHistory = storedData ? JSON.parse(storedData) : [];
     
-          // Create a new data object with temperature, humidity, and current time
           const newData = {
             temperature: Data.main.temp,
             humidity: Data.main.humidity,
-            time: new Date().toLocaleString() // Add current time
+            time: new Date().toLocaleString()
           };
     
           if (dataHistory.length >= 10) {
             dataHistory.shift();
           }
     
-          // Add the new data object to the array
           dataHistory.push(newData);
-    
-          // Store the updated data back in localStorage
           localStorage.setItem("dataHistory", JSON.stringify(dataHistory));
         }
       }, [Data]);
@@ -53,7 +48,6 @@ export default function DisplayData({Data}) {
                     <li>Pressure: {Data.main.pressure} hPa</li>
                     <li>Visibility: {Data.visibility} m</li>
                   </ul>
-                  
 
                 </div>
                 <div className="data-temp">
@@ -77,18 +71,18 @@ export default function DisplayData({Data}) {
                               min: -45,
                               max: 45,
                               ticks: {
-                                color: "#999999", // Set color property for the axis text
+                                color: "#999999", 
                               },
                               grid: {
-                                color: "#999999", // Set color property for the grid lines
+                                color: "#999999", 
                               },
                             },
                             x: {
                               ticks: {
-                                color: "#999999", // Set color property for the axis text
+                                color: "#999999", 
                               },
                               grid: {
-                                color: "#999999", // Set color property for the grid lines
+                                color: "#999999", 
                               },
                             },
                         },
@@ -116,18 +110,18 @@ export default function DisplayData({Data}) {
                               min: 0,
                               max: 100,
                               ticks: {
-                                color: "#999999", // Set color property for the axis text
+                                color: "#999999", 
                               },
                               grid: {
-                                color: "#999999", // Set color property for the grid lines
+                                color: "#999999", 
                               },
                             },
                             x: {
                               ticks: {
-                                color: "#999999", // Set color property for the axis text
+                                color: "#999999", 
                               },
                               grid: {
-                                color: "#999999", // Set color property for the grid lines
+                                color: "#999999", 
                               },
                             },
                         },
