@@ -65,27 +65,30 @@ export default function DisplayData({Data}) {
                       ],
                     }}
                     options={{
-                        scales: {
-                            y: {
-                              beginAtZero: true,
-                              min: -45,
-                              max: 45,
-                              ticks: {
-                                color: "#999999", 
-                              },
-                              grid: {
-                                color: "#999999", 
-                              },
-                            },
-                            x: {
-                              ticks: {
-                                color: "#999999", 
-                              },
-                              grid: {
-                                color: "#999999", 
-                              },
-                            },
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          min: -45,
+                          max: 45,
+                          ticks: {
+                            color: "#999999", 
+                          },
+                          grid: {
+                            color: "#999999", 
+                          },
                         },
+                        x: {
+                          ticks: {
+                            color: "#999999", 
+                          },
+                          grid: {
+                            color: "#999999", 
+                          },
+                        },
+                      },
+                      maintainAspectRatio: false,
+                      width: "80%",
+                      height: "100%",
                     }}
                   />
                 </div>
@@ -104,27 +107,30 @@ export default function DisplayData({Data}) {
                       ],
                     }}
                     options={{
-                        scales: {
-                            y: {
-                              beginAtZero: true,
-                              min: 0,
-                              max: 100,
-                              ticks: {
-                                color: "#999999", 
-                              },
-                              grid: {
-                                color: "#999999", 
-                              },
-                            },
-                            x: {
-                              ticks: {
-                                color: "#999999", 
-                              },
-                              grid: {
-                                color: "#999999", 
-                              },
-                            },
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          min: 0,
+                          max: 100,
+                          ticks: {
+                            color: "#999999", 
+                          },
+                          grid: {
+                            color: "#999999", 
+                          },
                         },
+                        x: {
+                          ticks: {
+                            color: "#999999", 
+                          },
+                          grid: {
+                            color: "#999999", 
+                          },
+                        },
+                      },
+                      maintainAspectRatio: false,
+                      width: "80%",
+                      height: "100%",
                     }}
                   />
                 </div>
